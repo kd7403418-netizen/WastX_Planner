@@ -19,6 +19,9 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: 📋 Grant execute permission to gradlew
+        run: chmod +x ./gradlew
+
       - name: 🔧 Build Debug APK (no wrapper)
         uses: gradle/gradle-build-action@v2
         with:
