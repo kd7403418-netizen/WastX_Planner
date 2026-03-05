@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Full screen, no title bar, dark status bar -->
+    <style name="AppTheme" parent="android:Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">#0b1121</item>
+        <item name="android:statusBarColor">#0b1121</item>
+        <item name="android:navigationBarColor">#0b1121</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>
