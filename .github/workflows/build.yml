@@ -31,7 +31,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: 🔎 List repo root (debug)
+      - name: 🔎 Debug list repo root
         run: ls -la
 
       - name: 🔍 Verify gradlew and wrapper files
@@ -56,6 +56,7 @@ jobs:
         with:
           name: WastX-Planner-APK
           path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: warn
           retention-days: 30
 
       - name: ✅ Done
