@@ -19,13 +19,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: 📋 Grant execute permission to gradlew
-        run: chmod +x ./gradlew
+      - name: 🔧 Install Gradle
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gradle
 
       - name: 🔧 Build Debug APK (no wrapper)
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: assembleDebug
+        run: gradle assembleDebug --no-daemon --stacktrace
 
       - name: 📦 Upload APK
         uses: actions/upload-artifact@v4
@@ -35,4 +35,4 @@ jobs:
           retention-days: 30
 
       - name: ✅ Done
-        run: echo "✅ APK ready! Download from Artifacts section above."
+        run: echo "✅ APK ready! Download
